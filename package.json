@@ -2,12 +2,13 @@
   "name": "donaciones-api",
   "version": "1.0.0",
   "private": true,
-  "type": "module",
-  "main": "src/server.js",
+  "type": "commonjs",
+  "main": "dist/server.js",
   "scripts": {
     "dev": "node --watch src/server.js",
-    "start": "node src/server.js",
-    "lint": "echo 'no lint configured'"
+    "start": "node dist/server.js",
+    "lint": "echo 'no lint configured'",
+    "build": "tsc -w"
   },
   "dependencies": {
     "cors": "^2.8.5",
