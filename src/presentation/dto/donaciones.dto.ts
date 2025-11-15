@@ -4,6 +4,8 @@ export interface DonacionesDtoInterface{
     idDonador: number;
     idCampania: number | null;
     fechaCreacion: string;
+    state: string;
+    checker: number;
 }
 
 class DonacionesDTO implements DonacionesDtoInterface {
@@ -12,19 +14,25 @@ class DonacionesDTO implements DonacionesDtoInterface {
     idDonador: number;
     idCampania: number | null;
     fechaCreacion: string;
+    state: string; 
+    checker: number;
 
     constructor(
         {idDonacion,
         idTipoDonacion,
         idDonador,
         idCampania,
-        fechaCreacion}:DonacionesDtoInterface
+        fechaCreacion,
+        state,
+        checker}:DonacionesDtoInterface
     ) {
         this.idDonacion = idDonacion;
         this.idTipoDonacion = idTipoDonacion;
         this.idDonador = idDonador;
         this.idCampania = idCampania;
         this.fechaCreacion = fechaCreacion;
+        this.state = state;
+        this.checker = checker;
     }
 }
 

@@ -10,7 +10,7 @@ class DonacionesController extends DonacionesService {
     }
     list(req, res) {
         try {
-            DonacionesService.listarDonaciones(req, res);
+            DonacionesService.listarDonaciones(res);
         }
         catch (err) {
             console.log(err);

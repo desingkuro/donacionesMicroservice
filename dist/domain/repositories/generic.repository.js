@@ -6,8 +6,8 @@ export class GenericRepository {
     create(item) {
         return this.structure.create(item);
     }
-    findAll() {
-        return this.structure.findAll();
+    async findAll() {
+        return await this.structure.findAll();
     }
     findById(id) {
         return this.structure.findById(id);

@@ -4,6 +4,8 @@ interface DonacionProps {
     idDonador: number;
     idCampania?: number | null;
     fechaCreacion?: string;
+    state?: string;
+    checker?: number;
 }
 declare class Donacion {
     private _idDonacion;
@@ -11,12 +13,16 @@ declare class Donacion {
     private _idDonador;
     private _idCampania;
     private _fechaCreacion;
-    constructor({ idDonacion, idTipoDonacion, idDonador, idCampania, fechaCreacion }: DonacionProps);
+    private _state;
+    private _checker;
+    constructor({ idDonacion, idTipoDonacion, idDonador, idCampania, fechaCreacion, state, checker }: DonacionProps);
     get idDonacion(): string;
     get idTipoDonacion(): string | number;
     get idDonador(): number;
     get idCampania(): number | null;
     get fechaCreacion(): string;
+    get state(): string;
+    get checker(): number;
     set idCampania(value: number | null);
 }
 export default Donacion;

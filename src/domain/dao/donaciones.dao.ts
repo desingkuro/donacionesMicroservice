@@ -11,6 +11,8 @@ export class DonacionesSQLStructure implements IDataStructure<Donacion> {
       entity.idDonador,
       entity.idCampania,
       entity.fechaCreacion,
+      entity.state,
+      entity.checker,
     ]);
 
     return result.rows?.[0] || entity;
@@ -33,6 +35,8 @@ export class DonacionesSQLStructure implements IDataStructure<Donacion> {
       partial.idDonador,
       partial.idCampania,
       partial.fechaCreacion,
+      partial.state,
+      partial.checker,
       id,
     ]);
 

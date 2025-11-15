@@ -10,8 +10,8 @@ export class GenericRepository<T> {
     create(item: T) {
         return this.structure.create(item);
     }
-    findAll() {
-        return this.structure.findAll();
+    async findAll() {
+        return await this.structure.findAll();
     }
     findById(id: string | number) {
         return this.structure.findById(id);

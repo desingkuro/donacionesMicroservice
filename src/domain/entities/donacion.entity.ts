@@ -4,6 +4,8 @@ interface DonacionProps {
   idDonador: number;
   idCampania?: number | null;
   fechaCreacion?: string;
+  state?: string;
+  checker?: number;
 }
 
 class Donacion {
@@ -12,13 +14,17 @@ class Donacion {
   private _idDonador: number;
   private _idCampania: number | null;
   private _fechaCreacion: string;
+  private _state: string;
+  private _checker: number;
 
   constructor({
     idDonacion,
     idTipoDonacion,
     idDonador,
     idCampania = null,
-    fechaCreacion = new Date().toISOString()
+    fechaCreacion = new Date().toISOString(),
+    state = 'Pendiente',
+    checker = 0
   }: DonacionProps) {
 
     this._idDonacion = idDonacion;
@@ -26,6 +32,8 @@ class Donacion {
     this._idDonador = idDonador;
     this._idCampania = idCampania;
     this._fechaCreacion = fechaCreacion;
+    this._state = state;
+    this._checker = checker;
   }
 
   get idDonacion() { return this._idDonacion; }
@@ -33,6 +41,8 @@ class Donacion {
   get idDonador() { return this._idDonador; }
   get idCampania() { return this._idCampania; }
   get fechaCreacion() { return this._fechaCreacion; }
+  get state() { return this._state; }
+  get checker() { return this._checker; }
 
   set idCampania(value: number | null) { this._idCampania = value; }
 }

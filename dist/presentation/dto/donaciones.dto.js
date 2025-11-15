@@ -4,12 +4,16 @@ class DonacionesDTO {
     idDonador;
     idCampania;
     fechaCreacion;
-    constructor({ idDonacion, idTipoDonacion, idDonador, idCampania, fechaCreacion }) {
+    state;
+    checker;
+    constructor({ idDonacion, idTipoDonacion, idDonador, idCampania, fechaCreacion, state, checker }) {
         this.idDonacion = idDonacion;
         this.idTipoDonacion = idTipoDonacion;
         this.idDonador = idDonador;
         this.idCampania = idCampania;
         this.fechaCreacion = fechaCreacion;
+        this.state = state;
+        this.checker = checker;
     }
 }
 export default DonacionesDTO;

@@ -1,5 +1,5 @@
 import Donacion from "../../domain/entities/donacion.entity.js";
-import { response, type Request, type Response } from "express";
+import { type Request, type Response } from "express";
 import DonacionesDTO from "../../presentation/dto/donaciones.dto.js";
 import { DonacionesRepository } from "../../domain/dao/Donaciones.repository.js";
 
@@ -15,23 +15,26 @@ export class DonacionesService {
       idDonador: dto.idDonador,
       idCampania: dto.idCampania,
       fechaCreacion: dto.fechaCreacion,
+      state: dto.state,
+      checker: dto.checker,
     });
 
     try {
       const result = await dao.create(entity);
-      return await response.status(201).json(result);
+      return res.status(201).json(result);
     } catch (error: any) {
-      return response.status(500).json({ error: error?.message });
+      return res.status(500).json({ error: error?.message });
     }
   }
 
-  protected static async listarDonaciones(request: Request, res: Response) {
+  protected static async listarDonaciones(res: Response) {
     try {
       const dao = new DonacionesRepository();
       const donaciones = await dao.findAll();
-      return response.status(200).json(donaciones);
+      return res.status(200).json(donaciones);
     } catch (error: any) {
-      return response.status(500).json({ error: error?.message });
+      console.log(error)
+      return res.status(500).json({ error: error?.message });
     }
   }
 }
